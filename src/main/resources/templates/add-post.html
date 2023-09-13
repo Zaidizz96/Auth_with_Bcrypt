@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Post</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS styles for the card */
+        .card {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .card h2 {
+            font-size: 24px;
+            margin: 0;
+            color: #333;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Add more styles as needed */
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div th:text="'Welcome : ' + ${username}"></div>
+    <form action="/logout" method="POST">
+        <input type="submit" value="Log Out">
+    </form>
+
+    <div class="form-container">
+        <div class="form-inner">
+            <form action="/add-post" class="login" method="POST">
+                <div class="field">
+                    <input type="text" name="textContent" placeholder="Please enter content" required>
+                </div>
+                <div class="field btn">
+                    <div class="btn-layer"></div>
+                    <input type="submit" value="Add">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
